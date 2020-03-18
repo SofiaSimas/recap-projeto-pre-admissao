@@ -1,0 +1,22 @@
+h1{
+    font-style: normal;
+    color: rgb(238, 98, 133);
+    text-align: center;
+}
+h2 {
+    font-style: normal;
+    color: rgb(170, 52, 81);
+    text-align: center;
+}
+#tabela{
+    display: flex;
+    justify-content: center;
+}
+
+.respostas {
+    display: inline-block;
+    width: 40%;
+    border: 1px solid rgb(175, 53, 53);
+    height: 300px;
+    text-align: center;
+}
