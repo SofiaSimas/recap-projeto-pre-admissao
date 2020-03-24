@@ -1,41 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Prova Online</title>
+    <title>Jogo</title>
+    <link rel="stylesheet" href="style.css" </head>
 </head>
+
 <body>
+    <section class="active" id="welcome">
+        <h1>Bem vindo ao jogo</h1>
+        <label for="name">Qual seu nome?</label>
+        <input type="text" id="nameInput" />
+        <div class="button">
+            <button onclick="setName()">Enviar</button>
+        </div>
 
-    <header class = titulo>
-        <h1>Vestibular</h1>
-        <h2 id="nome"> </h2>
-    </header>
+    </section>
+    <section class="game" id="game">
+        <h2>Oi, <span id="name"></span> </h2>
+        <h3>Qual categoria você escolhe?</h3>
+        <button class="button" onclick="selectCartoon()">DESENHO</button>
+        <button class="button" onclick="selectSerie()">SÉRIE</button>
 
-    <h2>Resultados</h2>
-    
-    <main id="tabela">
-        <section class="respostas">
-                <h3>RESPOSTAS CORRETAS</h3>
-                    <h4 id= "corretaUm"></h4>
-                    <h4 id= "corretaDois"></h4>
-                    <h4 id= "corretaTres"></h4>
-        </section>
-        <section class="respostas">
-                <h3>RESPOSTAS ERRADAS</h3>
-                    <h4 id= "erradaUm"></h4>
-                    <h4 id= "erradaDois"></h4>
-                    <h4 id= "erradaTres"></h4>
-        </section>
+
+    </section>
+    <section class="cartoon" id="cartoon">
+        <h4>Irmão do Jorel: Qual o nome do irmão mais velho?</h4>
+        <input type="radio" name="question_cartoon_1" value="Nico" />
+        <label for="question_cartoon_1">Nico</label>
+        <input type="radio" name="question_cartoon_1" value="Jorel" />
+        <label for="question_cartoon_1">Jorel</label>
+        <input type="radio" name="question_cartoon_1" value="Juliano" />
+        <label for="question_cartoon_1">Juliano</label>
+
+        <h4>Bob esponja: Qual é a espécie do melhor amigo do Bob esponja?</h4>
+        <input type="radio" name="question_cartoon_2" value="Esponja" />
+        <label for="question_cartoon_2">Esponja</label>
+        <input type="radio" name="question_cartoon_2" value="Lula" />
+        <label for="question_cartoon_2">Lula</label>
+        <input type="radio" name="question_cartoon_2" value="Estrela do mar" />
+        <label for="question_cartoon_2">Estrela do mar</label>
+
+        <h4>Ursos sem curso: Qual o nome dos três ursos?</h4>
+        <input type="radio" name="question_cartoon_3" value="Polar, Batatinha e Panda" />
+        <label for="question_cartoon_3">Polar, Batatinha e Panda</label>
+        <input type="radio" name="question_cartoon_3" value="Panda, Pardo e Gelinho " />
+        <label for="question_cartoon_3">Panda, Pardo e Gelinho </label>
+        <input type="radio" name="question_cartoon_3" value="Panda, Pardo e Polar" />
+        <label for="question_cartoon_3">Panda, Pardo e Polar</label>
+
+        <button class="button answer-button" onclick="answerCartoon()">Resposta</button>
+
+    </section>
+
+    <section class="series" id="series">
+        <h4>The Office: Qual o nome do prêmio que Michael dá à seus empregados?</h4>
+        <input type="radio" name="question_series_1" value="Candies" />
+        <label for="question_series_1">Candies</label>
+        <input type="radio" name="question_series_1" value="Dundles" />
+        <label for="question_series_1">Tundles</label>
+        <input type="radio" name="question_series_1" value="Dundies" />
+        <label for="question_series_1">Dundies</label>
+
+        <h4>How I met your mother: Qual a profissão de Lily?</h4>
+        <input type="radio" name="question_series_2" value="Pintora" />
+        <label for="question_series_2">Pintora</label>
+        <input type="radio" name="question_series_2" value="Designer" />
+        <label for="question_series_2">Designer</label>
+        <input type="radio" name="question_series_2" value="Professora" />
+        <label for="question_series_2">Professora</label>
+
+        <h4>Modern Family: Qual o nome da cachorrinha do Jay?</h4>
+        <input type="radio" name="question_series_3" value="Claire" />
+        <label for="question_series_3">Claire</label>
+        <input type="radio" name="question_series_3" value="Glória " />
+        <label for="question_series_3">Glória </label>
+        <input type="radio" name="question_series_3" value="Stella" />
+        <label for="question_series_3">Stella</label>
+
+        <button class="button answer-button" onclick="answerSerie()">Resposta</button>
+
+    </section>
+
+    <section id="result">
+        <h3>Pergunta 1</h3>
+        <ul>
+            <li>Opção correta:<span id="correct1"></span></li>
+            <li>Selecionado:<span id="answer1"></span></li>
+            <li><span id="result1"></span></li>
+        </ul>
+        <h3>Pergunta 2</h3>
+        <ul>
+            <li>Opção correta:<span id="correct2"></span></li>
+            <li>Selecionado:<span id="answer2"></span></li>
+            <li><span id="result2"></span></li>
+        </ul>
+        <h3>Pergunta 3</h3>
+        <ul>
+            <li>Opção correta:<span id="correct3"></span></li>
+            <li>Selecionado:<span id="answer3"></span></li>
+            <li><span id="result3"></span></li>
+        </ul>
+        <button class="button" onclick="selectCartoon()">DESENHO</button>
+        <button class="button" onclick="selectSerie()">SÉRIE</button>
+        <button class="button" onclick="selectSair()">Sair</button>
+
+
+    </section>
+    <section class="exit" id="exit">
+        <h2>TCHAU <span id="name">ATÉ A PRÓXIMA!</span> </h2>
+
+    </section>
+
+
+
+
+    <script src="main.js"></script>
     </main>
-
-<script src="main.js"></script>
-
-<footer>
-    Feito por Camila Cunha e Sofia Simas.
-</footer>
-
 </body>
+
 </html>
